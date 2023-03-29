@@ -12,14 +12,15 @@ import java.util.Random;
 public class GDXSpaceInvader extends ApplicationAdapter {
 
 	private SpriteBatch batch;
+	private Random r;
 
     private Texture fondo;
 	//private ArrayList<ObjetoVolador> listaElementos;
     private Disparo disparo;
     //private NaveEspacial nave;
-    private ObjetoVolador naveLider;
-	private NaveEnemiga naveEnemiga;
-    private Random r;
+	private NaveLider naveLider;
+	private NaveAmiga naveAmiga;
+
 	//private Escuadron escuadron;
 	private Batallon batallon;
 
@@ -28,14 +29,13 @@ public class GDXSpaceInvader extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		r = new Random();
 		//listaElementos = new ArrayList<ObjetoVolador>();
-		naveEnemiga = new NaveEnemiga(0, 0, 3, 100, 100, "badlogic.jpg");
 		fondo = new Texture("espacio.png");
+		naveAmiga = new NaveAmiga(70, 65, 3, 140, 125, "naveAmiga.png");
 		//nave = new NaveEspacial(0, 350, 3, 80, 100, "naveEnemiga.png");
-		disparo = new Disparo(r.nextInt(600), 0, 5, 25, 50, "laserBullet.png");
-		naveLider = new ObjetoVolador(Gdx.graphics.getWidth()/2f - 300, 450, 0,(-0.2f), 600,384, "naveLider.png");
-
+		disparo = new Disparo(r.nextInt(600), -25, 5, 25, 50, "laserBullet.png");
+		naveLider = new NaveLider(Gdx.graphics.getWidth()/2f, 642, (-0.2f), 600,384, "naveLider.png");
 		//escuadron = new Escuadron((byte) 5, Gdx.graphics.getWidth(), Gdx.graphics.getWidth()-100,150,0,60,75,"naveEnemiga.png");
-		batallon = new Batallon((byte) 2, (byte) 8, Gdx.graphics.getWidth(), Gdx.graphics.getWidth()-200,400,1,60,75,"naveEnemiga.png", 85);
+		batallon = new Batallon((byte) 2, (byte) 8, Gdx.graphics.getWidth(), Gdx.graphics.getWidth()-200,450,1,60,75,"naveEnemiga.png", 85);
 		/*int segmento = Gdx.graphics.getWidth()/6; //Queremos 5 naves, entonces se divide el ancho de la pantalla en 6 (nºnaves + 1)
 		int posicion = 0;
 		for(int i = 0;i < 5;i++){
@@ -57,14 +57,8 @@ public class GDXSpaceInvader extends ApplicationAdapter {
 
 		//escuadron.moverse();
 		batallon.moverse();
-		if(naveLider.getPosY() > 225.0f && naveLider.getVelY() > 0) {
-			naveLider.setVelY(naveLider.getVelY() * (-1));
-		}
-		if(naveLider.getPosY() <= 175f) {
-			naveLider.setVelY(naveLider.getVelY() * (-1));
-		}
 		naveLider.moverse();
-		naveEnemiga.moverse();
+		naveAmiga.moverse();
 
 		/*for(ObjetoVolador naves : listaElementos){
 			naves.moverse();
@@ -79,7 +73,7 @@ public class GDXSpaceInvader extends ApplicationAdapter {
 		naveLider.pintar(batch);
 		//nave.pintar(batch);
 		disparo.pintar(batch);
-		naveEnemiga.pintar(batch);
+		naveAmiga.pintar(batch);
 		//escuadron.pintar(batch);
 		batallon.pintar(batch);
 
@@ -112,7 +106,7 @@ public class GDXSpaceInvader extends ApplicationAdapter {
 		//nave.dispose();
 		disparo.dispose();
 		naveLider.dispose();
-		naveEnemiga.dispose();
+		naveAmiga.dispose();
 		//escuadron.dispose();
 		batallon.dispose();
 		fondo.dispose();

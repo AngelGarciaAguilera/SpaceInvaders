@@ -28,7 +28,7 @@ public class NaveEnemiga extends NaveEspacial{
 
     @Override
     public void moverse(){
-        if(posX >= Gdx.graphics.getWidth() - widthDiv2*2){
+        if(posX >= Gdx.graphics.getWidth() - widthDiv2){
             positivo = false;
         }else if(posX == 0f){
             positivo = true;

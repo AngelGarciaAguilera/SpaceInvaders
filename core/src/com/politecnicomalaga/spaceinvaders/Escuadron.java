@@ -13,7 +13,7 @@ public class Escuadron{
 
     public Escuadron(byte numNaves, int anchoPantalla, int anchoDisponible, float posY, float velX, float width, float height, String imagen){
         this.numNaves = numNaves;
-        this.posX = ((anchoPantalla - anchoDisponible)/2)-width/2;
+        this.posX = (anchoPantalla - anchoDisponible)/2;
         this.velX = velX;
         this.width = width;
         this.anchoPantalla = anchoPantalla;
@@ -32,7 +32,7 @@ public class Escuadron{
         posX += velX;
         //escuadron[numNaves-1].getPosX() >= Gdx.graphics.getWidth() - escuadron[numNaves-1].getWidth() || escuadron[0].getPosX() <= 0f
         //posX <= 0 || (posX + anchoDisponible) >= anchoPantalla
-        if(escuadron[numNaves-1].getPosX() >= Gdx.graphics.getWidth() - escuadron[numNaves-1].getWidth() || escuadron[0].getPosX() <= 0f){
+        if(escuadron[numNaves-1].getPosX() >= Gdx.graphics.getWidth() - escuadron[numNaves-1].getWidthDiv2() || escuadron[0].getPosX() <= 0f + escuadron[0].getWidthDiv2()){
             velX = velX * (-1);
             for(NaveEspacial miEscuadron:escuadron){
                 miEscuadron.setVelX(velX);

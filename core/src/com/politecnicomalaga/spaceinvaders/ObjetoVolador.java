@@ -25,9 +25,9 @@ public class ObjetoVolador {
         this.imagen = new Texture(imagen);
     }
     public void pintar(SpriteBatch batch){
-        //Debería poner posX - widthDiv2 y posY - heightDiv2
+        //Debería poner posX - widthDiv2 y posY - heightDiv2 para que se pinte desde el centro de la imagen
         //Después de esto debería tocar mucho código
-        batch.draw(imagen, posX, posY, widthDiv2*2, heightDiv2*2);
+        batch.draw(imagen, posX - widthDiv2, posY - heightDiv2, widthDiv2*2, heightDiv2*2);
     }
     public void moverse(){
         posX += velX;

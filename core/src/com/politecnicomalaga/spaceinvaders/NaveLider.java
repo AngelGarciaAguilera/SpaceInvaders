@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class NaveLider extends ObjetoVolador{
 
-    private boolean bajar;
+    //private boolean bajar;
 
     //##############################################
 
@@ -18,10 +18,11 @@ public class NaveLider extends ObjetoVolador{
 
     @Override
     public void moverse(){
-        if(posY > 225f){
+        /*
+        if(posY > 225f+162f){
             bajar = true;
         }
-        else if (posY <= 175f){
+        else if (posY <= 175f+162){
             bajar = false;
         }
         if(bajar){
@@ -29,6 +30,13 @@ public class NaveLider extends ObjetoVolador{
         }
         else{
             posY += velY;
+        }*/
+        posY += velY;
+        if(posY > 225.0f+162 && velY > 0) {
+            this.setVelY(velY * (-1));
+        }
+        if(posY <= 175f+162) {
+            this.setVelY(velY * (-1));
         }
     }
 }
