@@ -1,9 +1,11 @@
-package com.politecnicomalaga.spaceinvaders;
+package com.politecnicomalaga.spaceinvaders.modelo;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 //Toda clase tiene como padre Object, aunque no se señale.
 //Por ejemplo, ObjetoVolador esta extend de Object.
+
 public class ObjetoVolador {
 
     protected float posX;

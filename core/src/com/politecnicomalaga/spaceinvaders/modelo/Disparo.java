@@ -1,10 +1,8 @@
-package com.politecnicomalaga.spaceinvaders;
-
-import com.badlogic.gdx.Gdx;
+package com.politecnicomalaga.spaceinvaders.modelo;
 
 import java.util.Random;
 
-public class Disparo extends ObjetoVolador{
+public class Disparo extends ObjetoVolador {
 
     private Random r = new Random();
     public Disparo(float posX, float posY, float velY, float width, float height, String imagen){

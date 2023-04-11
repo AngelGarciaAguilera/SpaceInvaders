@@ -1,6 +1,5 @@
-package com.politecnicomalaga.spaceinvaders;
+package com.politecnicomalaga.spaceinvaders.modelo;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Batallon {

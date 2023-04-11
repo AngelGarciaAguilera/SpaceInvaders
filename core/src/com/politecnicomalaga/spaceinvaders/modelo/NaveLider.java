@@ -1,7 +1,4 @@
-package com.politecnicomalaga.spaceinvaders;
-
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+package com.politecnicomalaga.spaceinvaders.modelo;
 
 public class NaveLider extends ObjetoVolador{
 

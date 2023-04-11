@@ -1,11 +1,10 @@
-package com.politecnicomalaga.spaceinvaders;
+package com.politecnicomalaga.spaceinvaders.modelo;
 
 import com.badlogic.gdx.Gdx;
 
 public class NaveAmiga extends NaveEspacial{
 
     //ATRIBUTOS
-    private boolean positivo = true;
 
     //##############################################
 
@@ -13,7 +12,7 @@ public class NaveAmiga extends NaveEspacial{
 
     //Constructor
     public NaveAmiga(float posX, float posY, float velX, float width, float height, String imagen){
-        super(posX, posY, velX, width, height, imagen);
+        super(posX, posY, velX, 0, width, height, imagen);
     }
 
     @Override
@@ -39,11 +38,10 @@ public class NaveAmiga extends NaveEspacial{
         }
     }*/
 
-    //Disparar
     public void disparoAmigo_dispara(){
 
     }
-    //Morir
+
     public void morirse(){
 
     }
